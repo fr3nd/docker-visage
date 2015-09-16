@@ -18,4 +18,6 @@ ENV VISAGE_VERSION 2.1.0
 RUN echo "gem: --bindir /usr/bin --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install visage-app -v $VISAGE_VERSION
 
+EXPOSE 9292
+
 CMD visage-app start
