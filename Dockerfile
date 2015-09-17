@@ -17,6 +17,7 @@ ENV VISAGE_VERSION 2.1.0
 
 RUN echo "gem: --bindir /usr/bin --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install visage-app -v $VISAGE_VERSION
+RUN sed -i 's|\(Rack::Server.new(:config => config, :Port => port, :server => "webrick"\)|\1, :Host => "0.0.0.0"|g' /var/lib/gems/2.1.0/gems/visage-app-${VISAGE_VERSION}/bin/visage-app
 
 EXPOSE 9292
 
