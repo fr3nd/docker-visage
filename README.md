@@ -20,8 +20,8 @@ Visage looks for some environment variables when starting up:
 docker run \
   -it \
   --rm \
-  -v /var/lib/collectd:/var/lib/collectd:ro \
-  -e RRDDIR=/var/lib/collectd \
+  -v /var/lib/collectd/rrd:/var/lib/collectd/rrd:ro \
+  -e RRDDIR=/var/lib/collectd/rrd \
   -p 9292:9292 \
   fr3nd/visage
 ```
